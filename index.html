@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Current Project · Your Name</title>
+  <title>Control Systems Toolkit · V. Narayan Kushwaha</title>
   <meta name="description" content="Single-page portfolio showcasing my current project and a short bio." />
-  <meta property="og:title" content="My Current Project · Your Name" />
+  <meta property="og:title" content="Control Systems Toolkit · V. Narayan Kushwaha" />
   <meta property="og:description" content="Single-page portfolio showcasing my current project and a short bio." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/project.jpg" />
@@ -86,16 +86,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Your Name",
-    "url": "https://your-username.github.io/",
-    "sameAs": ["https://github.com/your-username"],
-    "knowsAbout": ["Architecture","Urban Planning","Design"],
-    "hasPart": {
-      "@type":"CreativeWork",
-      "name":"Current Project",
-      "description":"Short description of the project you are working on right now.",
-      "image":"images/project.jpg"
-    }
+    "name": "V. Narayan Kushwaha",
+    "url": "https://vnarayan18.github.io/",
+    "email": "mailto:vibhutik@buffalo.edu",
+    "telephone": "+1-716-604-7588",
+    "address": {"@type":"PostalAddress","addressLocality":"Buffalo","addressRegion":"NY","addressCountry":"US"},
+    "sameAs": ["https://github.com/vnarayan18"],
+    "alumniOf": {"@type":"CollegeOrUniversity","name":"University at Buffalo (SUNY)"},
+    "knowsAbout": ["Aerospace Engineering","Mechanical Engineering","Control Systems","MATLAB","CAD","Fusion 360","SolidWorks","LaTeX"]
   }
   </script>
   <!-- Simple passcode gate (client-side only; not secure for sensitive data) -->
@@ -110,6 +108,20 @@
     .gate-input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted), transparent 70%);background:color-mix(in oklab, var(--surface), transparent 5%);color:var(--text)}
     .gate-actions{display:flex;gap:10px;margin-top:14px}
     .gate-error{color:#f87171;font-size:13px;display:none;margin-top:8px}
+  </style>
+  <!-- Theme overrides: black & white, gold, red; serif font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0a;--surface:#101010;--card:#0f0f0f;--text:#f5f5f5;--muted:#c7c7c7;--gold:#d4af37;--red:#c1121f}
+    body{font-family:"Source Serif 4", Georgia, "Times New Roman", serif}
+    .brand .dot{background:linear-gradient(135deg,var(--gold),var(--red));box-shadow:0 0 0 4px rgba(212,175,55,.25)}
+    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--red));border:0;color:#1a1000}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .tag{color:var(--gold)!important}
+    .chip{border-color:rgba(212,175,55,.35)}
+    a{color:var(--text)}
   </style>
 </head>
 <body>
@@ -129,11 +141,12 @@
   </div>
   <header>
     <div class="container nav">
-      <div class="brand"><span class="dot"></span><span>your-username</span></div>
+      <div class="brand"><span class="dot"></span><span>V. Narayan Kushwaha</span></div>
       <nav>
         <a href="#project">Project</a>
         <a href="#details">Details</a>
         <a href="#about">About</a>
+        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -152,11 +165,11 @@
       </div>
       <div class="card pad">
         <span class="tag">Current Project</span>
-        <h1 class="title">PROJECT_TITLE</h1>
-        <p class="lead">One‑sentence overview of what you’re building. Keep it crisp and outcome‑focused.</p>
+        <h1 class="title">Control Systems Toolkit (MATLAB)</h1>
+        <p class="lead">Templates & helper functions for MAE 340 to speed up transfer‑function derivations, state‑space models, poles/zeros, root‑locus and step/impulse analysis.</p>
         <div class="btns">
           <a class="btn primary" href="#details" aria-label="Read project details">Read details</a>
-          <a class="btn" href="https://github.com/your-username/your-repo" target="_blank" rel="noreferrer">View on GitHub</a>
+          <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">View on GitHub</a>
         </div>
       </div>
     </section>
@@ -168,19 +181,18 @@
       <div class="grid">
         <div>
           <ul class="list">
-            <li><strong>Goal:</strong> Describe the problem and the outcome you want.</li>
-            <li><strong>Stack / Tools:</strong> List tech, materials, suppliers, or methods.</li>
-            <li><strong>Status:</strong> Alpha / Beta / Prototype / Production.</li>
-            <li><strong>Next Milestone:</strong> What you’re shipping next.</li>
-            <li><strong>Links:</strong> <a href="#">Demo</a> · <a href="#">Docs</a> · <a href="#">Issue board</a></li>
+            <li><strong>Goal:</strong> Reusable control‑systems toolkit for coursework/labs (MAE 340): TF ↔ SS, step/impulse, root locus, settling‑time & DC gain.</li>
+            <li><strong>Stack / Tools:</strong> MATLAB (Control System Toolbox), Simulink; LaTeX/Overleaf for reports.</li>
+            <li><strong>Status:</strong> Active — v0.1 scripts validated on HW6 examples.</li>
+            <li><strong>Next Milestone:</strong> Interactive root‑locus tuner + export‑quality plots.</li>
+            <li><strong>Links:</strong> <a href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">GitHub</a> · <a href="#cv">Coursework</a></li>
           </ul>
         </div>
         <div>
           <ul class="list">
-            <li><strong>Highlights:</strong> Bullet 1</li>
-            <li>Bullet 2</li>
-            <li>Bullet 3</li>
-            <li><strong>Contact for feedback:</strong> your.email@example.com</li>
+            <li><strong>Highlights:</strong> pole/zero finder, step‑info wrapper, Routh‑Hurwitz helper, plotting presets.</li>
+            <li><strong>Also building:</strong> SolidWorks mini‑projects (chain link pair, custom threads) and materials/XRD study aids.</li>
+            <li><strong>Feedback:</strong> Email or open an issue on GitHub.</li>
           </ul>
         </div>
       </div>
@@ -192,30 +204,74 @@
       <h2 class="title" style="font-size:clamp(20px,2.5vw,28px)">About Me</h2>
       <div class="about">
         <div>
-          <p>Hi, I’m <strong>Your Name</strong> — Architect & Urban Planner based in Lucknow, India (example). I run <em>Sketch Consultants</em> and work across architecture, interiors, and urban planning. This page tracks what I’m actively building right now.</p>
-          <p>Previously: short highlights, awards, or notable projects. Add anything that gives context and credibility in a sentence or two.</p>
+          <p>Hi, I’m <strong>V. Narayan Kushwaha</strong> — B.S. Hons. Aerospace & Mechanical Engineering (Junior, GPA 3.5) at the University at Buffalo (SUNY). I like control systems, dynamics, CAD/CAM, and materials. I tutor Calculus/Physics/Chemistry (CRLA‑1), help run DREAM Lab workshops, and build tooling for MATLAB/Simulink.</p>
+          <p>Currently: authoring a Control Systems Toolkit for MAE 340, assisting UB DREAM Lab, and continuing CAD instruction (Fusion 360) and research exposure in composites.</p>
           <div class="btns">
-            <a class="btn" href="#contact">Get in touch</a>
-            <a class="btn" href="resume.pdf">Resume</a>
+            <a class="btn" href="#cv">View CV</a>
+            <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
         <div>
-          <!-- Replace avatar.jpg with your photo (square recommended) -->
-          <img class="avatar" src="images/avatar.jpg" alt="Your portrait" />
+          <img class="avatar" src="images/avatar.jpg" alt="Portrait of V. Narayan Kushwaha" />
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
+    <section id="cv" class="card pad" style="margin-top:24px">
+      <span class="tag">CV</span>
+      <h2 class="title" style="font-size:clamp(20px,2.5vw,28px)">Education, Experience & Projects</h2>
+      <div class="grid">
+        <div>
+          <h3 style="margin-top:0">Education</h3>
+          <ul class="list">
+            <li><strong>B.S. Hons. — Aerospace & Mechanical Engineering</strong>, University at Buffalo (SUNY), Junior, GPA 3.5 — Buffalo, NY, USA</li>
+          </ul>
+
+          <h3>Recognitions</h3>
+          <ul class="list">
+            <li><strong>First Year Engineering – Design Award</strong> (Fall 2023): steam‑formed balsa airfoil mold; wind‑turbine optimization over 2 months.</li>
+          </ul>
+
+          <h3>Projects</h3>
+          <ul class="list">
+            <li><strong>Water‑to‑Water Heat Pump Design Optimization</strong> — Thermodynamics (MATLAB, LaTeX): designed and numerically optimized for max COP.</li>
+            <li><strong>Steady‑State Temperature Distribution Solver</strong> — Engineering Computations (MATLAB): Fourier conduction + convection solver.</li>
+            <li><strong>Water Pipe Flow Optimization</strong> — Fluid Mechanics (MATLAB): Colebrook + Darcy–Weisbach solver; recommended pipe type/diameter/path.</li>
+            <li><strong>Assistive Pool Lift Design</strong> — Statics (SolidWorks): team optimization for strength, rigidity, cost, FoS.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-top:0">Experience</h3>
+          <ul class="list">
+            <li><strong>Autodesk Fusion 360 CAD Workshops @ UB DREAM Lab</strong> — Buffalo, NY (Sep 2024 – Present): CAM/CAD/Rendering/FEA sessions in Fusion 360.</li>
+            <li><strong>Sketch Consultants — Drafting & Structural Analysis</strong> — India (Jun 2022 – Aug 2022; May–Aug 2024; May–Aug 2025): photorealistic elevation renders; Python load‑calc workflow; AutoCAD drafting.</li>
+            <li><strong>Research Assistant — Composite Materials Research Lab</strong> — UB (Sep 2023 – Oct 2024): boron fiber as conductive/polarizable; lab handling & reports; presented at Mat SciTech 2024 (Pittsburgh); tools: LaTeX, MS Office, MATLAB.</li>
+            <li><strong>Student Tutor — UB TASS</strong> — (Feb 2024 – Present): 150+ students in Calc I–III, Chem I, Physics I; CRLA Level 1; personalized feedback & simulation‑based explanations.</li>
+            <li><strong>DREAM (Tinkering) Lab Staff</strong> — UB (Mar 2024 – Present): workshop delivery, 3D printer maintenance, slicing, CAD help; modules in reverse engineering, MATLAB, Fusion.</li>
+            <li><strong>Spaulding Hall Council — Diversity & Inclusion Chair</strong> — UB (Sep 2023 – Apr 2024): event planning & promotion for resident engagement.</li>
+            <li><strong>NASA L’SPACE Program</strong> — ASU (Online) (Dec 2023 – May 2024): team on mock LUCY asteroid mission; Siemens NX CAD; systems engineering concepts.</li>
+          </ul>
+
+          <h3>Relevant Coursework</h3>
+          <ul class="list">
+            <li>Calculus III, Differential Equations, Gen Physics I–II, Gen Chem I</li>
+            <li>Engineering Computations, Thermodynamics I, Heat Transfer</li>
+            <li>Dynamics, Statics, Mechanics of Solids, Fluid Mechanics</li>
+            <li>Intro to AE Practice, EE Concepts for Non‑Majors, Aerodynamics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="card pad" style="margin-top:24px">
       <span class="tag">Contact</span>
       <h2 class="title" style="font-size:clamp(20px,2.5vw,28px)">Let’s Connect</h2>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>Social: <a href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://x.com/your-handle" target="_blank" rel="noreferrer">X/Twitter</a></p>
+      <p>Best way: <a href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">GitHub @vnarayan18</a></p>
     </section>
 
     <footer>
-      <p>© <span id="year"></span> Your Name · Built with vanilla HTML/CSS · Press <span class="kbd">/</span> to jump to sections</p>
+      <p>© <span id="year"></span> Vibhuti Narayan· Built with vanilla HTML/CSS · Press <span class="kbd">/</span> to jump to sections</p>
     </footer>
   </main>
 
