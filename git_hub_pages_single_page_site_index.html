@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Current Project · Your Name</title>
+  <meta name="description" content="Single-page portfolio showcasing my current project and a short bio." />
+  <meta property="og:title" content="My Current Project · Your Name" />
+  <meta property="og:description" content="Single-page portfolio showcasing my current project and a short bio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/project.jpg" />
+  <meta name="theme-color" content="#0ea5e9">
+  <style>
+    :root{
+      --bg: #0b1020;          /* deep ink */
+      --surface: #0f172a;     /* slate-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e5e7eb;        /* gray-200 */
+      --brand: #0ea5e9;       /* sky-500 */
+      --brand-2:#22c55e;      /* green-500 */
+      --ring: rgba(14,165,233,.35);
+      --card: #111827;        /* gray-900 */
+      --shadow: 0 10px 30px rgba(2,6,23,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc; --surface:#ffffff; --muted:#475569; --text:#0f172a; --card:#ffffff; --shadow:0 10px 30px rgba(2,6,23,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,.12), transparent 60%),
+                        radial-gradient(1000px 800px at 110% -10%, rgba(34,197,94,.10), transparent 55%), var(--bg);
+         color:var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"}
+    a{color:inherit}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(1.5) blur(10px); background:color-mix(in oklab, var(--bg) 75%, transparent); border-bottom:1px solid color-mix(in oklab, var(--muted), transparent 70%); z-index:10}
+    .nav{display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 0 0 4px var(--ring)}
+    .nav a{padding:10px 12px;border-radius:12px;color:var(--muted);text-decoration:none}
+    .nav a:hover{color:var(--text); background:color-mix(in oklab, var(--surface), transparent 60%)}
+
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:28px}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 10%), color-mix(in oklab, var(--surface), transparent 0%)); border:1px solid color-mix(in oklab, var(--muted), transparent 70%); border-radius:24px; box-shadow:var(--shadow)}
+    .pad{padding:22px}
+    .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .title{font-size:clamp(24px,3vw,36px);line-height:1.15;margin:.25em 0 .35em}
+    .lead{color:var(--muted)}
+
+    .project-media{position:relative;border-radius:20px;overflow:hidden}
+    .project-media img{display:block;width:100%;height:auto;object-fit:cover}
+    .chipbar{position:absolute;inset:auto 12px 12px;display:flex;gap:10px}
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:color-mix(in oklab, var(--surface), transparent 10%); border:1px solid color-mix(in oklab, var(--muted), transparent 70%)}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media (max-width: 800px){.grid{grid-template-columns:1fr}}
+
+    .list{display:grid;gap:10px;margin:16px 0;padding-left:20px}
+    .list li{margin-left:.25rem}
+
+    .about{display:grid;grid-template-columns:1fr .8fr;gap:24px}
+    @media (max-width: 900px){.about{grid-template-columns:1fr}}
+
+    .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid color-mix(in oklab, var(--muted), transparent 60%)}
+
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;text-decoration:none;border:1px solid color-mix(in oklab, var(--muted), transparent 70%)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:0;color:#001827}
+    .btn:hover{box-shadow:0 6px 18px rgba(14,165,233,.2)}
+
+    footer{color:var(--muted);padding:30px 0;text-align:center}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; padding:.1em .45em; border-radius:6px; background:color-mix(in oklab, var(--surface), transparent 5%); border:1px solid color-mix(in oklab, var(--muted), transparent 70%)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "https://your-username.github.io/",
+    "sameAs": ["https://github.com/your-username"],
+    "knowsAbout": ["Architecture","Urban Planning","Design"],
+    "hasPart": {
+      "@type":"CreativeWork",
+      "name":"Current Project",
+      "description":"Short description of the project you are working on right now.",
+      "image":"images/project.jpg"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span><span>your-username</span></div>
+      <nav>
+        <a href="#project">Project</a>
+        <a href="#details">Details</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO / CURRENT PROJECT -->
+    <section id="project" class="hero">
+      <div class="card project-media">
+        <!-- Replace images/project.jpg with your image path or URL -->
+        <img src="images/project.jpg" alt="Current project preview" />
+        <div class="chipbar">
+          <span class="chip">In Progress</span>
+          <span class="chip">Updated <span id="updated-date">today</span></span>
+        </div>
+      </div>
+      <div class="card pad">
+        <span class="tag">Current Project</span>
+        <h1 class="title">PROJECT_TITLE</h1>
+        <p class="lead">One‑sentence overview of what you’re building. Keep it crisp and outcome‑focused.</p>
+        <div class="btns">
+          <a class="btn primary" href="#details" aria-label="Read project details">Read details</a>
+          <a class="btn" href="https://github.com/your-username/your-repo" target="_blank" rel="noreferrer">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT DETAILS -->
+    <section id="details" class="card pad" style="margin-top:28px">
+      <span class="tag">Details</span>
+      <h2 class="title" style="font-size:clamp(20px,2.5vw,28px)">What I'm Building</h2>
+      <div class="grid">
+        <div>
+          <ul class="list">
+            <li><strong>Goal:</strong> Describe the problem and the outcome you want.</li>
+            <li><strong>Stack / Tools:</strong> List tech, materials, suppliers, or methods.</li>
+            <li><strong>Status:</strong> Alpha / Beta / Prototype / Production.</li>
+            <li><strong>Next Milestone:</strong> What you’re shipping next.</li>
+            <li><strong>Links:</strong> <a href="#">Demo</a> · <a href="#">Docs</a> · <a href="#">Issue board</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="list">
+            <li><strong>Highlights:</strong> Bullet 1</li>
+            <li>Bullet 2</li>
+            <li>Bullet 3</li>
+            <li><strong>Contact for feedback:</strong> your.email@example.com</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about" class="card pad" style="margin-top:24px">
+      <span class="tag">About</span>
+      <h2 class="title" style="font-size:clamp(20px,2.5vw,28px)">About Me</h2>
+      <div class="about">
+        <div>
+          <p>Hi, I’m <strong>Your Name</strong> — Architect & Urban Planner based in Lucknow, India (example). I run <em>Sketch Consultants</em> and work across architecture, interiors, and urban planning. This page tracks what I’m actively building right now.</p>
+          <p>Previously: short highlights, awards, or notable projects. Add anything that gives context and credibility in a sentence or two.</p>
+          <div class="btns">
+            <a class="btn" href="#contact">Get in touch</a>
+            <a class="btn" href="resume.pdf">Resume</a>
+          </div>
+        </div>
+        <div>
+          <!-- Replace avatar.jpg with your photo (square recommended) -->
+          <img class="avatar" src="images/avatar.jpg" alt="Your portrait" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card pad" style="margin-top:24px">
+      <span class="tag">Contact</span>
+      <h2 class="title" style="font-size:clamp(20px,2.5vw,28px)">Let’s Connect</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>Social: <a href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://x.com/your-handle" target="_blank" rel="noreferrer">X/Twitter</a></p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Your Name · Built with vanilla HTML/CSS · Press <span class="kbd">/</span> to jump to sections</p>
+    </footer>
+  </main>
+
+  <script>
+    // Simple niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Show a friendly "Updated" label using the page's last-modified time
+    const lm = new Date(document.lastModified);
+    const pretty = lm.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+    document.getElementById('updated-date').textContent = pretty;
+
+    // Quick keyboard nav: press '/' to open section links
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === '/'){
+        e.preventDefault();
+        const msg = 'Jump to: project, details, about, contact';
+        const to = prompt(msg, 'project');
+        if(to){
+          const id = to.trim().toLowerCase();
+          const el = document.getElementById(id);
+          if(el) el.scrollIntoView({behavior:'smooth'});
+        }
+      }
+    });
+  </script>
+</body>
+</html>
