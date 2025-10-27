@@ -8,59 +8,52 @@
   <meta property="og:title" content="Control Systems Toolkit · V. Narayan Kushwaha" />
   <meta property="og:description" content="Single-page portfolio showcasing my current project and a short bio." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/d4af37/png?text=Control+Systems+Toolkit" />
-  <meta name="theme-color" content="#d4af37"> <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta property="og:image" content="https://placehold.co/1200x630/0a0f1a/b3d4ff/png?text=Control+Systems+Toolkit" />
+  <meta name="theme-color" content="#4f9cff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
-    /* --- CONSOLIDATED THEME --- */
+    /* --- BLUISH THEME --- */
     :root{
-      /* Merged black/gold/red theme directly */
-      --bg: #0a0a0a;
-      --surface: #101010;
-      --muted: #c7c7c7;
-      --text: #f5f5f5;
-      --gold: #d4af37;
-      --red: #c1121f;
-      --ring: rgba(212,175,55,.25); /* Updated ring color */
-      --card: #0f0f0f;
-      --shadow: 0 10px 30px rgba(2,6,23,.35);
+      --bg: #0a0f1a;           /* deep blue-black */
+      --surface: #0f1724;      /* card surface */
+      --muted: #c7d0dc;        /* muted text */
+      --text: #f5f8ff;         /* primary text */
+      --blue-1: #4f9cff;       /* primary */
+      --blue-2: #1e62ff;       /* secondary accent */
+      --ring: rgba(79,156,255,.28);
+      --card: #0e1622;
+      --shadow: 0 10px 30px rgba(10, 31, 60, .35);
+      --chip-border: rgba(79,156,255,.35);
     }
-    
-    /* Removed the light mode @media query as the override theme was dark-only */
-    
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      /* Kept the cool radial gradients from the original theme */
-      background:radial-gradient(1200px 600px at 10% -10%, rgba(212,175,55,.08), transparent 60%), /* Updated to gold */
-                        radial-gradient(1000px 800px at 110% -10%, rgba(193,18,31,.07), transparent 55%), /* Updated to red */
-                        var(--bg);
-      color:var(--text); 
-      /* Set font-family from the override */
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(79,156,255,.10), transparent 60%),
+        radial-gradient(1000px 800px at 110% -10%, rgba(30,98,255,.08), transparent 55%),
+        var(--bg);
+      color:var(--text);
       font: 16px/1.6 "Source Serif 4", Georgia, "Times New Roman", serif;
     }
-    a{color:var(--text)} /* Added from override */
+    a{color:var(--text)}
     .container{max-width:1000px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;backdrop-filter:saturate(1.5) blur(10px); background:color-mix(in oklab, var(--bg) 75%, transparent); border-bottom:1px solid color-mix(in oklab, var(--muted), transparent 70%); z-index:10}
-    
-    /* Added flex-wrap for better responsiveness on small screens */
-    .nav{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap} 
-    
+    .nav{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    /* Merged override styles */
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--red)); box-shadow:0 0 0 4px var(--ring)}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--blue-1),var(--blue-2)); box-shadow:0 0 0 4px var(--ring)}
     .nav a{padding:10px 12px;border-radius:12px;color:var(--muted);text-decoration:none}
-    /* Merged override styles */
     .nav a:hover{color:var(--text); background:rgba(255,255,255,.06)}
 
     .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:28px}
     @media (max-width: 900px){.hero{grid-template-columns:1fr}}
     .card{background:linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 10%), color-mix(in oklab, var(--surface), transparent 0%)); border:1px solid color-mix(in oklab, var(--muted), transparent 70%); border-radius:24px; box-shadow:var(--shadow)}
     .pad{padding:22px}
-    .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)!important} /* Merged override */
+    .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-1)!important}
     .title{font-size:clamp(24px,3vw,36px);line-height:1.15;margin:.25em 0 .35em}
     .lead{color:var(--muted)}
 
@@ -68,7 +61,7 @@
     .project-media img{display:block;width:100%;height:auto;object-fit:cover}
     .chipbar{position:absolute;inset:auto 12px 12px;display:flex;gap:10px}
     .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:color-mix(in oklab, var(--surface), transparent 10%); border:1px solid color-mix(in oklab, var(--muted), transparent 70%)}
-    .chip{border-color:rgba(212,175,55,.35)} /* Merged override */
+    .chip{border-color:var(--chip-border)}
 
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     @media (max-width: 800px){.grid{grid-template-columns:1fr}}
@@ -83,16 +76,13 @@
 
     .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;text-decoration:none;border:1px solid color-mix(in oklab, var(--muted), transparent 70%)}
-    /* Merged override styles */
-    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--red));border:0;color:#1a1000}
-    .btn:hover{box-shadow:0 6px 18px rgba(212,175,55,.2)} /* Updated hover shadow */
+    .btn.primary{background:linear-gradient(135deg,var(--blue-1),var(--blue-2));border:0;color:#061227}
+    .btn:hover{box-shadow:0 6px 18px rgba(79,156,255,.22)}
 
     footer{color:var(--muted);padding:30px 0;text-align:center}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; padding:.1em .45em; border-radius:6px; background:color-mix(in oklab, var(--surface), transparent 5%); border:1px solid color-mix(in oklab, var(--muted), transparent 70%)}
-    
-    /* --- Removed redundant .gate styles --- */
-    
   </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -106,22 +96,18 @@
     "knowsAbout": ["Aerospace Engineering","Mechanical Engineering","Control Systems","MATLAB","CAD","Fusion 360","SolidWorks","LaTeX"]
   }
   </script>
+
   <style>
-    /* These styles are specific to the gate and are fine here */
-    .gate-overlay{position:fixed;inset:0;background:radial-gradient(800px 400px at 20% -10%, rgba(212,175,55,.08), transparent 60%), /* Updated to gold */
-                               radial-gradient(700px 600px at 120% -10%, rgba(193,18,31,.07), transparent 55%), /* Updated to red */
-                               var(--bg);
-                   display:flex;align-items:center;justify-content:center;z-index:9999}
-    .gate-card{background:linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 10%), color-mix(in oklab, var(--surface), transparent 0%));
-               border:1px solid color-mix(in oklab, var(--muted), transparent 70%);border-radius:20px;box-shadow:var(--shadow);padding:24px;max-width:380px;width:92%}
+    /* Gate styles */
+    .gate-overlay{position:fixed;inset:0;background:radial-gradient(800px 400px at 20% -10%, rgba(79,156,255,.10), transparent 60%), radial-gradient(700px 600px at 120% -10%, rgba(30,98,255,.08), transparent 55%), var(--bg); display:flex;align-items:center;justify-content:center;z-index:9999}
+    .gate-card{background:linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 10%), color-mix(in oklab, var(--surface), transparent 0%)); border:1px solid color-mix(in oklab, var(--muted), transparent 70%);border-radius:20px;box-shadow:var(--shadow);padding:24px;max-width:380px;width:92%}
     .gate-card h1{margin:0 0 8px;font-size:22px}
     .gate-card p{margin:0 0 14px;color:var(--muted)}
     .gate-input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid color-mix(in oklab, var(--muted), transparent 70%);background:color-mix(in oklab, var(--surface), transparent 5%);color:var(--text)}
     .gate-actions{display:flex;gap:10px;margin-top:14px}
     .gate-error{color:#f87171;font-size:13px;display:none;margin-top:8px}
   </style>
-  
-  </head>
+</head>
 <body>
   <div id="gate" class="gate-overlay" role="dialog" aria-modal="true" aria-labelledby="gate-title">
     <form id="gate-form" class="gate-card" autocomplete="off">
@@ -136,6 +122,7 @@
       <div id="gate-error" class="gate-error">Incorrect passcode. Try again.</div>
     </form>
   </div>
+
   <header>
     <div class="container nav">
       <div class="brand"><span class="dot"></span><span>V. Narayan Kushwaha</span></div>
@@ -145,6 +132,7 @@
         <a href="#about">About</a>
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
+        <a href="collections.html" aria-label="Open Collections">Collections</a>
       </nav>
     </div>
   </header>
@@ -152,7 +140,7 @@
   <main class="container">
     <section id="project" class="hero">
       <div class="card project-media">
-        <img src="https://placehold.co/800x600/0f0f0f/d4af37/png?text=Control+Systems+Toolkit" alt="Current project preview" />
+        <img src="https://placehold.co/800x600/0e1622/b3d4ff/png?text=Control+Systems+Toolkit" alt="Current project preview" />
         <div class="chipbar">
           <span class="chip">In Progress</span>
           <span class="chip">Updated <span id="updated-date">today</span></span>
@@ -164,7 +152,8 @@
         <p class="lead">Templates & helper functions for MAE 340 to speed up transfer‑function derivations, state‑space models, poles/zeros, root‑locus and step/impulse analysis.</p>
         <div class="btns">
           <a class="btn primary" href="#details" aria-label="Read project details">Read details</a>
-          <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">View on GitHub</a>
+          <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer noopener">View on GitHub</a>
+          <a class="btn" href="collections.html" aria-label="Open portfolio collections">Open Collections</a>
         </div>
       </div>
     </section>
@@ -179,7 +168,7 @@
             <li><strong>Stack / Tools:</strong> MATLAB (Control System Toolbox), Simulink; LaTeX/Overleaf for reports.</li>
             <li><strong>Status:</strong> Active — v0.1 scripts validated on HW6 examples.</li>
             <li><strong>Next Milestone:</strong> Interactive root‑locus tuner + export‑quality plots.</li>
-            <li><strong>Links:</strong> <a href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">GitHub</a> · <a href="#cv">Coursework</a></li>
+            <li><strong>Links:</strong> <a href="https://github.com/vnarayan18" target="_blank" rel="noreferrer noopener">GitHub</a> · <a href="#cv">Coursework</a></li>
           </ul>
         </div>
         <div>
@@ -201,12 +190,12 @@
           <p>Currently: authoring a Control Systems Toolkit for MAE 340, assisting UB DREAM Lab, and continuing CAD instruction (Fusion 360) and research exposure in composites.</p>
           <div class="btns">
             <a class="btn" href="#cv">View CV Section</a>
-            <a class="btn primary" href="cv.pdf" target="_blank">Download CV (PDF)</a>
-            <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn primary" href="cv.pdf" target="_blank" rel="noreferrer noopener">Download CV (PDF)</a>
+            <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer noopener">GitHub</a>
           </div>
         </div>
         <div>
-          <img class="avatar" src="https://placehold.co/120x120/101010/f5f5f5/png?text=VNK" alt="Portrait of V. Narayan Kushwaha" />
+          <img class="avatar" src="https://placehold.co/120x120/101723/f5f8ff/png?text=VNK" alt="Portrait of V. Narayan Kushwaha" />
         </div>
       </div>
     </section>
@@ -263,7 +252,8 @@
       <p>You can reach me via email or find my work on GitHub. I'm open to discussing projects, research, or workshop opportunities.</p>
       <div class="btns">
         <a class="btn primary" href="mailto:vibhutik@buffalo.edu">Email: vibhutik@buffalo.edu</a>
-        <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer">GitHub @vnarayan18</a>
+        <a class="btn" href="https://github.com/vnarayan18" target="_blank" rel="noreferrer noopener">GitHub @vnarayan18</a>
+        <a class="btn" href="collections.html" aria-label="Open portfolio collections">Open Collections</a>
       </div>
     </section>
 
@@ -274,7 +264,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Show a friendly "Updated" label using the page's last-modified time
     const lm = new Date(document.lastModified);
     const pretty = lm.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
     document.getElementById('updated-date').textContent = pretty;
@@ -284,13 +273,12 @@
     window.addEventListener('keydown', (e)=>{
       if(e.key === '/'){
         e.preventDefault();
-        // UPDATED prompt to include 'cv'
         const msg = 'Jump to: project, details, about, cv, contact';
         const to = prompt(msg, 'project');
         if(to){
           const id = to.trim().toLowerCase();
           const el = document.getElementById(id);
-          if(el) el.scrollView({behavior:'smooth'});
+          if(el) el.scrollIntoView({behavior:'smooth'});
         }
       }
     });
@@ -331,7 +319,6 @@
       });
 
       cancelBtn.addEventListener('click', function(){
-        // Optional: navigate away or just clear the field
         input.value='';
         err.style.display='none';
         input.focus();
