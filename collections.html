@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selected Projects – Collections</title>
+  <style>
+    :root{
+      --bg:#0b0b0c;--text:#f4f4f5;--muted:#a1a1aa;--card:#111113;--bd:#26262b;--accent:#e5e7eb
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:auto;padding:0 16px}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
+    .bar{height:56px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:34px;height:34px;border-radius:12px;background:#f5f5f5;color:#0a0a0a;display:grid;place-items:center;font-weight:700}
+    .muted{color:var(--muted)}
+    .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--bd);background:#17171a}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:#1a1a1e;color:var(--text);cursor:pointer}
+    .btn[disabled]{opacity:.4;pointer-events:none}
+    .grid{display:grid;gap:12px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:1024px){.grid{grid-template-columns:repeat(4,1fr)}}
+    .card{overflow:hidden;border:1px solid var(--bd);border-radius:16px;background:var(--card)}
+    .img{position:relative;aspect-ratio:1/1;background:#141416}
+    .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+    .meta{padding:12px}
+    .row{display:flex;justify-content:space-between;gap:8px}
+    .title{margin:0;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .tags{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap}
+    .tag{font-size:10px;background:#1b1b1f;border:1px solid var(--bd);padding:2px 6px;border-radius:999px;color:#d4d4d8}
+    .controls{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+    input[type="text"],select{background:#131317;border:1px solid var(--bd);color:var(--text);border-radius:10px;padding:10px 12px;min-width:240px}
+    .filters{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:768px){.layout{display:grid;grid-template-columns:240px 1fr;gap:24px}}
+    .side{position:sticky;top:64px}
+    .section-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .active-chip{background:#f5f5f5;color:#0b0b0c}
+    .range{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}
+    .range input{appearance:none;width:100%}
+    .row-center{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px}
+    footer{border-top:1px solid var(--bd);margin-top:24px}
+    .dialog{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6)}
+    .dialog.open{display:flex}
+    .dialog-card{background:var(--card);border:1px solid var(--bd);border-radius:16px;max-width:960px;width:92%;overflow:hidden}
+    .dialog-body{display:grid;grid-template-columns:1fr;}
+    @media(min-width:768px){.dialog-body{grid-template-columns:1fr 1fr}}
+    .dialog-img{position:relative;aspect-ratio:1/1;background:#111}
+    .dots{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;gap:8px;background:rgba(20,20,23,.6);border:1px solid var(--bd);backdrop-filter:blur(4px);padding:6px 10px;border-radius:999px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#71717a}
+    .dot.active{background:#f4f4f5}
+    .dialog-content{padding:18px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <div class="brand">
+        <div class="logo">VNK</div>
+        <span class="muted">V. Narayan Kushwaha</span>
+      </div>
+      <nav style="display:flex;gap:12px">
+        <a class="chip" href="#">Work</a>
+        <a class="chip" href="#">About</a>
+        <a class="chip" href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:16px 0 24px">
+    <section style="display:flex;align-items:end;justify-content:space-between;gap:16px;padding:18px 0 8px">
+      <div>
+        <h1 style="margin:0;font-size:28px;font-weight:600;letter-spacing:-.01em">Selected Projects</h1>
+        <p class="muted" style="margin:6px 0 0;font-size:13px">Portfolio collections. Filter by tag, year, or search.</p>
+      </div>
+      <div style="display:none" id="sortDesktop"></div>
+    </section>
+
+    <hr style="border:0;border-top:1px solid var(--bd)">
+
+    <section class="layout" style="padding:16px 0">
+      <aside class="side" id="sidebar">
+        <div class="filters">
+          <div>
+            <div class="section-label">Filters</div>
+          </div>
+          <div>
+            <div class="muted" style="margin-bottom:6px">Tags</div>
+            <div id="tagList" class="chips"></div>
+          </div>
+          <div>
+            <div class="muted" style="margin-bottom:6px">Year <span id="yearLabel" class="muted"></span></div>
+            <div class="range">
+              <input id="yMin" type="range" min="2019" max="2025" step="1">
+              <input id="yMax" type="range" min="2019" max="2025" step="1">
+            </div>
+            <button id="resetBtn" class="btn" style="margin-top:12px;width:100%">Reset</button>
+          </div>
+        </div>
+      </aside>
+
+      <section>
+        <div class="controls">
+          <input type="text" id="search" placeholder="Search projects">
+          <select id="sort">
+            <option value="new">Newest</option>
+            <option value="old">Oldest</option>
+            <option value="az">A–Z</option>
+            <option value="za">Z–A</option>
+          </select>
+        </div>
+
+        <div id="activeChips" class="chips" style="margin-bottom:8px"></div>
+
+        <div id="grid" class="grid"></div>
+
+        <div class="row-center">
+          <button id="prev" class="btn">◀</button>
+          <span class="muted" id="pageInfo"></span>
+          <button id="next" class="btn">▶</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:18px 0 28px;display:grid;grid-template-columns:1fr;gap:12px}">
+      <div class="muted" style="font-size:14px">© <span id="yearNow"></span> V. Narayan Kushwaha</div>
+      <div class="muted" style="font-size:14px">Built with vanilla HTML, CSS, and JS.</div>
+      <div style="justify-self:end" class="muted">Contact • <a href="mailto:vibhutik@buffalo.edu" style="text-decoration:underline">vibhutik@buffalo.edu</a></div>
+    </div>
+  </footer>
+
+  <!-- Quick View Dialog -->
+  <div id="dialog" class="dialog" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="dialog-card">
+      <div class="dialog-body">
+        <div class="dialog-img">
+          <img id="dlgImg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div id="dots" class="dots"></div>
+        </div>
+        <div class="dialog-content">
+          <h3 id="dlgTitle" style="margin:0 0 6px;font-size:20px;font-weight:600"></h3>
+          <div class="muted" id="dlgMeta" style="font-size:13px"></div>
+          <div id="dlgTags" class="chips" style="margin:10px 0 8px"></div>
+          <p id="dlgSummary" style="margin:8px 0 12px;font-size:14px;line-height:1.5"></p>
+          <div>
+            <div class="section-label" style="margin-bottom:6px">Tools</div>
+            <div id="dlgTools" class="chips"></div>
+          </div>
+          <div style="margin-top:14px;display:flex;justify-content:flex-end;gap:8px">
+            <button id="dlgClose" class="btn">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- DATA (mirrors your React PROJECTS) ----------
+    const PROJECTS = [
+      {
+        id: 'p1',
+        title: 'Green Home Stay – Website & Brand',
+        year: 2025,
+        role: 'Designer, Engineer',
+        tools: ['Figma','Next.js','Tailwind'],
+        tags: ['web','brand','hospitality'],
+        images: [ph(1,'#111827','#1f2937'), ph(2,'#1f2937','#374151')],
+        summary: 'Responsive site and identity for a family‑run homestay. Booking‑first UX, fast pages, and reusable components.'
+      },
+      {
+        id: 'p2',
+        title: 'DREAM Lab – Print Queue Automation',
+        year: 2024,
+        role: 'Full‑stack',
+        tools: ['Python','Flask','PostgreSQL'],
+        tags: ['automation','backend','3d‑printing'],
+        images: [ph(3,'#0b3b2d','#14532d'), ph(4,'#064e3b','#065f46')],
+        summary: 'Reduced turn‑around with automated triage, G‑code linting, and operator dashboards.'
+      },
+      {
+        id: 'p3',
+        title: 'Sketch Consultants – Elevation Renders',
+        year: 2023,
+        role: 'Visualization',
+        tools: ['SketchUp','Lumion','Photoshop'],
+        tags: ['architecture','render'],
+        images: [ph(5,'#1f2937','#0ea5e9'), ph(6,'#0ea5e9','#38bdf8')],
+        summary: 'Photorealistic facades, material studies, and lighting for client approvals.'
+      },
+      {
+        id: 'p4',
+        title: 'Composite Materials – Lab Reports',
+        year: 2024,
+        role: 'Research Assistant',
+        tools: ['LaTeX','MATLAB'],
+        tags: ['research','materials'],
+        images: [ph(7,'#0f172a','#1e293b'), ph(8,'#1e293b','#334155')],
+        summary: 'Electrical behavior of boron fiber as conductive and polarizable medium.'
+      },
+      ...Array.from({length:8}).map((_,i)=>({
+        id:`extra-${i}`,
+        title:`Project ${i+1}`,
+        year: 2022 + (i % 4),
+        role:'Contributor',
+        tools:['ToolA','ToolB'],
+        tags:['web', i % 2 ? 'backend' : 'frontend'],
+        images:[ph(10+i,'#111827','#27272a'), ph(20+i,'#27272a','#3f3f46')],
+        summary:'Short summary for placeholder project.'
+      }))
+    ];
+
+    // ---------- STATE ----------
+    const PER_PAGE = 12;
+    let q = '';
+    let activeTags = [];
+    let sort = 'new';
+    let yMin = Math.min(...PROJECTS.map(p=>p.year));
+    let yMax = Math.max(...PROJECTS.map(p=>p.year));
+    let range = [yMin, yMax];
+    let page = 1;
+
+    // ---------- DOM ----------
+    const grid = document.getElementById('grid');
+    const searchEl = document.getElementById('search');
+    const sortEl = document.getElementById('sort');
+    const tagList = document.getElementById('tagList');
+    const activeChips = document.getElementById('activeChips');
+    const yearLabel = document.getElementById('yearLabel');
+    const yMinEl = document.getElementById('yMin');
+    const yMaxEl = document.getElementById('yMax');
+    const resetBtn = document.getElementById('resetBtn');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const pageInfo = document.getElementById('pageInfo');
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+    // Dialog elements
+    const dlg = document.getElementById('dialog');
+    const dlgClose = document.getElementById('dlgClose');
+    const dlgTitle = document.getElementById('dlgTitle');
+    const dlgMeta = document.getElementById('dlgMeta');
+    const dlgTags = document.getElementById('dlgTags');
+    const dlgSummary = document.getElementById('dlgSummary');
+    const dlgTools = document.getElementById('dlgTools');
+    const dlgImg = document.getElementById('dlgImg');
+    const dots = document.getElementById('dots');
+
+    // ---------- INIT ----------
+    const allTags = Array.from(new Set(PROJECTS.flatMap(p=>p.tags))).sort();
+    yMinEl.min = yMinEl.min || yMin; yMinEl.max = yMax; yMaxEl.min = yMin; yMaxEl.max = yMax;
+    yMinEl.value = yMin; yMaxEl.value = yMax; updateYearLabel();
+    renderTags();
+    bind();
+    render();
+
+    function bind(){
+      searchEl.addEventListener('input', ()=>{ q = searchEl.value.trim().toLowerCase(); page = 1; render(); });
+      sortEl.addEventListener('change', ()=>{ sort = sortEl.value; page = 1; render(); });
+      yMinEl.addEventListener('input', ()=>{ range[0] = Math.min(+yMinEl.value, +yMaxEl.value); yMinEl.value = range[0]; updateYearLabel(); page=1; render();});
+      yMaxEl.addEventListener('input', ()=>{ range[1] = Math.max(+yMinEl.value, +yMaxEl.value); yMaxEl.value = range[1]; updateYearLabel(); page=1; render();});
+      resetBtn.addEventListener('click', ()=>{ q=''; searchEl.value=''; activeTags=[]; sort='new'; sortEl.value='new'; range=[yMin,yMax]; yMinEl.value=yMin; yMaxEl.value=yMax; updateYearLabel(); page=1; render(); });
+      prevBtn.addEventListener('click', ()=>{ page = Math.max(1, page-1); render(); });
+      nextBtn.addEventListener('click', ()=>{ page = Math.min(totalPages(), page+1); render(); });
+
+      dlg.addEventListener('click', (e)=>{ if(e.target===dlg) closeDialog(); });
+      dlgClose.addEventListener('click', closeDialog);
+    }
+
+    function updateYearLabel(){
+      yearLabel.textContent = ` ${range[0]}–${range[1]}`;
+    }
+
+    function renderTags(){
+      tagList.innerHTML = allTags.map(t=>`<button class="chip tag-chip ${activeTags.includes(t)?'active-chip':''}" data-tag="${t}">#${t}</button>`).join('');
+      tagList.querySelectorAll('.tag-chip').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const t = btn.getAttribute('data-tag');
+          if(activeTags.includes(t)) activeTags = activeTags.filter(x=>x!==t); else activeTags=[...activeTags,t];
+          page = 1; render(); renderTags();
+        });
+      });
+    }
+
+    function filtered(){
+      return PROJECTS.filter(p=>{
+        const inQ = !q || p.title.toLowerCase().includes(q) || p.role.toLowerCase().includes(q) || p.tools.join(' ').toLowerCase().includes(q) || p.tags.join(' ').toLowerCase().includes(q);
+        const inTags = activeTags.length===0 || activeTags.every(t=>p.tags.includes(t));
+        const inYear = p.year>=range[0] && p.year<=range[1];
+        return inQ && inTags && inYear;
+      }).sort((a,b)=>{
+        if(sort==='new') return b.year-a.year;
+        if(sort==='old') return a.year-b.year;
+        if(sort==='az') return a.title.localeCompare(b.title);
+        if(sort==='za') return b.title.localeCompare(a.title);
+        return 0;
+      });
+    }
+
+    function totalPages(){ return Math.max(1, Math.ceil(filtered().length / PER_PAGE)); }
+
+    function render(){
+      const list = filtered();
+      const pages = totalPages();
+      page = Math.min(page, pages);
+      const start = (page-1) * PER_PAGE;
+      const current = list.slice(start, start + PER_PAGE);
+
+      activeChips.innerHTML = activeTags.map(t=>`<span class="chip">#${t}<button class="btn" data-x="${t}" style="padding:2px 6px;margin-left:4px">×</button></span>`).join('');
+      activeChips.querySelectorAll('button').forEach(b=>{
+        b.addEventListener('click',()=>{ const t=b.getAttribute('data-x'); activeTags=activeTags.filter(x=>x!==t); page=1; render(); renderTags(); });
+      });
+
+      grid.innerHTML = current.map(card).join('');
+      attachHoverSwap();
+      attachQuickView();
+
+      pageInfo.textContent = `Page ${page} / ${pages}`;
+      prevBtn.disabled = page===1; nextBtn.disabled = page===pages;
+    }
+
+    function card(p){
+      return `
+        <article class="card" data-id="${p.id}">
+          <div class="img">
+            <img src="${p.images[0]}" alt="">
+            <img src="${p.images[1]||p.images[0]}" alt="" style="opacity:0">
+          </div>
+          <div class="meta">
+            <div class="row">
+              <h3 class="title">${escapeHTML(p.title)}</h3>
+              <span class="muted" style="font-size:12px">${p.year}</span>
+            </div>
+            <div class="tags">${p.tags.slice(0,3).map(t=>`<span class="tag">#${t}</span>`).join('')}</div>
+            <div style="margin-top:10px"><button class="btn open" data-id="${p.id}" style="width:100%">Quick view</button></div>
+          </div>
+        </article>`;
+    }
+
+    function attachHoverSwap(){
+      document.querySelectorAll('.card .img').forEach(box=>{
+        const [a,b] = box.querySelectorAll('img');
+        box.addEventListener('mouseenter',()=>{ a.style.opacity=0; b.style.opacity=1; });
+        box.addEventListener('mouseleave',()=>{ a.style.opacity=1; b.style.opacity=0; });
+        box.addEventListener('touchstart',()=>{ a.style.opacity = a.style.opacity==='0'?'1':'0'; b.style.opacity = b.style.opacity==='1'?'0':'1'; }, {passive:true});
+      });
+    }
+
+    function attachQuickView(){
+      document.querySelectorAll('.open').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const id = btn.getAttribute('data-id');
+          const p = PROJECTS.find(x=>x.id===id);
+          if(!p) return;
+          openDialog(p);
+        });
+      });
+    }
+
+    function openDialog(p){
+      dlgTitle.textContent = p.title;
+      dlgMeta.textContent = `${p.year} • ${p.role}`;
+      dlgTags.innerHTML = p.tags.map(t=>`<span class=\"tag\">#${t}</span>`).join('');
+      dlgSummary.textContent = p.summary;
+      dlgTools.innerHTML = p.tools.map(t=>`<span class=\"chip\">${t}</span>`).join('');
+
+      let idx = 0;
+      dlgImg.src = p.images[idx] || '';
+      dots.innerHTML = p.images.map((_,i)=>`<span class=\"dot ${i===0?'active':''}\"></span>`).join('');
+      const dotEls = Array.from(dots.children);
+
+      const setIdx = i=>{
+        idx = i; dlgImg.src = p.images[idx];
+        dotEls.forEach((d,k)=>d.classList.toggle('active', k===idx));
+      };
+
+      dots.addEventListener('click', e=>{
+        const k = dotEls.indexOf(e.target);
+        if(k>-1) setIdx(k);
+      });
+
+      dlg.classList.add('open');
+      dlg.setAttribute('aria-hidden','false');
+      document.addEventListener('keydown', escClose);
+      function escClose(ev){ if(ev.key==='Escape'){ closeDialog(); document.removeEventListener('keydown', escClose);} }
+    }
+
+    function closeDialog(){
+      dlg.classList.remove('open');
+      dlg.setAttribute('aria-hidden','true');
+    }
+
+    // ---------- UTILS ----------
+    function ph(seed=1,from="#111827",to="#1f2937"){
+      const svg = encodeURIComponent(`
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1200'>
+          <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+            <stop offset='0%' stop-color='${from}'/><stop offset='100%' stop-color='${to}'/></linearGradient></defs>
+          <rect width='1200' height='1200' fill='url(#g)'/>
+          <g fill='white' fill-opacity='0.12'>
+            <circle cx='${200 + (seed*97)%800}' cy='${220 + (seed*67)%760}' r='${160 + (seed*13)%180}'/>
+            <circle cx='${820 - (seed*41)%560}' cy='${880 - (seed*59)%640}' r='${120 + (seed*17)%140}'/>
+          </g>
+        </svg>`);
+      return `data:image/svg+xml;charset=utf-8,${svg}`;
+    }
+    function escapeHTML(s){
+      return s.replace(/[&<>"] /g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"," ":"&nbsp;"}[c]));
+    }
+  </script>
+</body>
+</html>
