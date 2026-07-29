@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,xcolor,enumitem,hyperref}
+\definecolor{navy}{HTML}{08111F}
+\definecolor{blue}{HTML}{2677FF}
+\definecolor{muted}{HTML}{5D6B80}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\pagestyle{plain}
+\begin{document}
+{\color{blue}\small\bfseries SUMMER ENGINEERING PROJECT --- 2026}
+\vspace{0.4em}
+{\color{navy}\LARGE\bfseries Autonomous Lane Keeping on Tata Punch EV}\\
+{\color{muted}\large Vehicle dynamics, perception, and closed-loop lateral control}
+
+\section*{Project overview}
+A summer 2026 engineering program centered on a lane-keeping architecture for a Tata Punch EV. The work links lane perception, path representation, lateral-error estimation, steering control, safety supervision, and repeatable validation.
+
+\section*{Engineering problem}
+A useful lane-keeping prototype must convert uncertain road observations into bounded steering commands while respecting vehicle dynamics and preserving a clear path to safe disengagement.
+
+\section*{System architecture}
+\begin{itemize}
+\item Perception: identify lane boundaries or a drivable corridor from camera data.
+\item State estimation: calculate lateral displacement, heading error, curvature, and confidence.
+\item Control: compare geometric and model-based steering laws, with saturation and rate limits.
+\item Safety: require manual override, confidence thresholds, speed limits, and fault logging.
+\end{itemize}
+
+\section*{Engineering focus}
+\begin{itemize}
+\item Bicycle-model reasoning for lateral motion and steering response.
+\item Controller tuning across speed, curvature, sensor noise, and actuator delay.
+\item Simulation-first validation before any controlled physical-vehicle experiment.
+\end{itemize}
+
+\section*{Verification plan}
+\begin{itemize}
+\item Track RMS and peak lateral error, heading error, steering rate, and disengagements.
+\item Use scripted straight, constant-radius, S-curve, dropout, and delay scenarios.
+\item Document assumptions and keep public-road deployment outside prototype scope.
+\end{itemize}
+
+\section*{Status and evidence boundary}
+Active summer 2026 design brief; implementation details and measured results should be added only after logged tests.
+
+\vfill
+\small\color{muted} V. Narayan Kushwaha --- Summer Engineering Portfolio 2026
+\end{document}

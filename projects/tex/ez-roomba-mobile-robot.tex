@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,xcolor,enumitem,hyperref}
+\definecolor{navy}{HTML}{08111F}
+\definecolor{blue}{HTML}{2677FF}
+\definecolor{muted}{HTML}{5D6B80}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\pagestyle{plain}
+\begin{document}
+{\color{blue}\small\bfseries SUMMER ENGINEERING PROJECT --- 2026}
+\vspace{0.4em}
+{\color{navy}\LARGE\bfseries EZ Roomba Mobile Robot}\\
+{\color{muted}\large Ultrasonic sensing and motor-shield integration}
+
+\section*{Project overview}
+A documented mobile-robot project using the NewPing ultrasonic-sensor library and the Adafruit v1 motor-shield library. The repository notes the practical pin-allocation constraint created by the motor shield and recommends repurposing analog pins as digital I/O.
+
+\section*{Engineering problem}
+A small autonomous platform must integrate ranging and motor control within limited microcontroller pins while keeping obstacle response predictable.
+
+\section*{System architecture}
+\begin{itemize}
+\item Ultrasonic ranging supplies obstacle-distance measurements through NewPing.
+\item An Adafruit v1 motor shield drives the mobile base.
+\item Analog pins can be configured as digital I/O because the shield occupies many PWM-capable pins.
+\item A simple behavior layer can map distance thresholds to forward, turn, and stop actions.
+\end{itemize}
+
+\section*{Engineering focus}
+\begin{itemize}
+\item Pin budgeting is treated as an early system-integration decision.
+\item Sensor filtering and timeout handling prevent single bad readings from dominating motion.
+\item Motor asymmetry should be calibrated rather than hidden in steering logic.
+\end{itemize}
+
+\section*{Verification plan}
+\begin{itemize}
+\item Measure stopping distance and avoidance success over repeated obstacle approaches.
+\item Test no-echo, close-range, angled-wall, and low-battery cases.
+\item Confirm wiring, library versions, and pin assignments in a reproducible setup record.
+\end{itemize}
+
+\section*{Status and evidence boundary}
+Repository-documented project; the public README confirms its core libraries and pin-allocation guidance.
+
+\vfill
+\small\color{muted} V. Narayan Kushwaha --- Summer Engineering Portfolio 2026
+\end{document}

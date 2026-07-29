@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,xcolor,enumitem,hyperref}
+\definecolor{navy}{HTML}{08111F}
+\definecolor{blue}{HTML}{2677FF}
+\definecolor{muted}{HTML}{5D6B80}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\pagestyle{plain}
+\begin{document}
+{\color{blue}\small\bfseries SUMMER ENGINEERING PROJECT --- 2026}
+\vspace{0.4em}
+{\color{navy}\LARGE\bfseries Stepper and Servo Control Platform}\\
+{\color{muted}\large Reusable embedded motion-control building blocks}
+
+\section*{Project overview}
+A reusable bench platform for commanding, tuning, and comparing stepper and servo actuators. It is intended to support the chalk plotter, robotic arm, and other electromechanical prototypes.
+
+\section*{Engineering problem}
+Reliable motion requires more than issuing position commands: power integrity, timing, acceleration, calibration, feedback, thermal limits, and fault handling must work together.
+
+\section*{System architecture}
+\begin{itemize}
+\item Command layer: position, velocity, acceleration, and coordinated-axis profiles.
+\item Driver layer: pulse/direction for steppers and calibrated pulse commands for servos.
+\item Safety layer: travel limits, enable control, current limits, timeouts, and stop behavior.
+\item Instrumentation: command/response logging and repeatable actuator test sequences.
+\end{itemize}
+
+\section*{Engineering focus}
+\begin{itemize}
+\item Compare open-loop stepper positioning with feedback-controlled servo behavior.
+\item Use acceleration ramps to reduce resonance, current spikes, and missed motion.
+\item Separate logic and motor power paths with deliberate grounding and decoupling.
+\end{itemize}
+
+\section*{Verification plan}
+\begin{itemize}
+\item Characterize position error, repeatability, maximum reliable speed, and thermal rise.
+\item Test limit-switch faults, interrupted commands, stalls, and restart behavior.
+\item Publish a clear pin map, calibration record, and interface contract for reuse.
+\end{itemize}
+
+\section*{Status and evidence boundary}
+Summer 2026 controls platform brief supporting multiple physical prototypes.
+
+\vfill
+\small\color{muted} V. Narayan Kushwaha --- Summer Engineering Portfolio 2026
+\end{document}

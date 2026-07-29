@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,xcolor,enumitem,hyperref}
+\definecolor{navy}{HTML}{08111F}
+\definecolor{blue}{HTML}{2677FF}
+\definecolor{muted}{HTML}{5D6B80}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\pagestyle{plain}
+\begin{document}
+{\color{blue}\small\bfseries SUMMER ENGINEERING PROJECT --- 2026}
+\vspace{0.4em}
+{\color{navy}\LARGE\bfseries Robotic Arm Prototype}\\
+{\color{muted}\large Kinematics, mechanical integration, and coordinated joint control}
+
+\section*{Project overview}
+A compact robotic-arm development project focused on the full engineering chain: defining reach and payload goals, designing joints and links, selecting actuators, solving kinematics, and validating repeatable motion.
+
+\section*{Engineering problem}
+Robotic-arm performance emerges from coupled choices in geometry, torque margin, stiffness, backlash, wiring, control timing, and end-effector requirements.
+
+\section*{System architecture}
+\begin{itemize}
+\item Mechanical structure: modular links, accessible joints, and replaceable end effector.
+\item Actuation: stepper or servo joints chosen from torque-speed and holding requirements.
+\item Control: joint-space commands with limits, homing, coordinated interpolation, and stop logic.
+\item Software: forward kinematics first, followed by bounded inverse-kinematics experiments.
+\end{itemize}
+
+\section*{Engineering focus}
+\begin{itemize}
+\item Static torque estimates include link mass, payload, lever arm, and safety factor.
+\item Workspace and singularity checks guide link dimensions and joint limits.
+\item Backlash and structural compliance are treated as measured system properties.
+\end{itemize}
+
+\section*{Verification plan}
+\begin{itemize}
+\item Measure repeatability at multiple workspace points and payload conditions.
+\item Check joint temperature, current draw, overshoot, settling, and limit behavior.
+\item Run pick-and-place sequences only after homing and emergency-stop tests pass.
+\end{itemize}
+
+\section*{Status and evidence boundary}
+Summer 2026 robotics design brief; final degrees of freedom and payload remain configuration-dependent.
+
+\vfill
+\small\color{muted} V. Narayan Kushwaha --- Summer Engineering Portfolio 2026
+\end{document}

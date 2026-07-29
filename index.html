@@ -3,36 +3,113 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume · V. Narayan Kushwaha</title>
-  <meta name="description" content="Resume of V. Narayan Kushwaha - Aerospace and Mechanical Engineering student focused on vehicle dynamics, controls, robotics, autonomy, CAD, and rapid prototyping.">
-  <meta name="theme-color" content="#4f9cff">
+  <title>V. Narayan Kushwaha | Summer Engineering Portfolio</title>
+  <meta name="description" content="Summer 2026 engineering portfolio: autonomy, controls, robotics, mechatronics, and aerospace simulation.">
+  <meta name="theme-color" content="#08111f">
   <style>
-    :root{--bg:#0a0f1a;--surface:#0f1724;--text:#f5f8ff;--muted:#c7d0dc;--blue:#4f9cff;--blue2:#1e62ff;--border:rgba(199,208,220,.25)}
-    *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;display:flex;flex-direction:column}
-    header{padding:14px 20px;background:rgba(15,23,36,.96);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .brand{font-weight:700;font-size:18px}.subtitle{color:var(--muted);font-size:14px;margin-top:3px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;border:1px solid var(--border);color:var(--text)}
-    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--blue2));border:0;color:#061227;font-weight:700}.btn:hover{filter:brightness(1.08)}
-    main{flex:1;min-height:0;padding:16px}.viewer{width:100%;height:100%;min-height:760px;border:1px solid var(--border);border-radius:14px;background:#fff}
-    .fallback{display:none;padding:30px;text-align:center;color:var(--muted)}
-    @media(max-width:650px){header{align-items:flex-start}.actions{width:100%}.btn{flex:1;text-align:center}main{padding:8px}.viewer{min-height:680px}}
+    :root{--navy:#08111f;--ink:#14233a;--muted:#607087;--blue:#2677ff;--cyan:#32c6d0;--paper:#f5f8fc;--card:#fff;--line:#dbe4ef}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(245,248,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;letter-spacing:-.02em}.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{text-decoration:none;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--blue)}
+    .hero{padding:88px 0 64px;background:radial-gradient(circle at 80% 20%,rgba(50,198,208,.2),transparent 32%),linear-gradient(135deg,#08111f,#10264c);color:white}
+    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#7ee8ee}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-.055em;margin:12px 0 20px;max-width:850px}
+    .hero p{max-width:720px;color:#cad7e8;font-size:clamp(17px,2vw,21px)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.28);font-weight:750;font-size:14px}.btn.primary{background:var(--blue);border-color:var(--blue);color:white}.btn.light{background:white;color:var(--navy)}
+    section{padding:70px 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:26px}.sectionhead h2{font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.04em;margin:0}.sectionhead p{max-width:540px;color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 12px 34px rgba(8,17,31,.06);display:flex;flex-direction:column}
+    .num{font:800 12px/1 ui-monospace,monospace;color:var(--blue);letter-spacing:.1em}.card h3{font-size:23px;line-height:1.15;letter-spacing:-.025em;margin:15px 0 9px}.card p{color:var(--muted);margin:0 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}.tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:#edf4ff;color:#1b5fc4;border-radius:999px;padding:5px 8px}
+    .downloads{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto}.downloads a{font-size:13px;font-weight:750;text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:8px 10px}.downloads a:first-child{background:var(--navy);color:white;border-color:var(--navy)}
+    .note{background:#eaf8f8;border:1px solid #b8e2e5;border-radius:16px;padding:20px;color:#31545b}.about{background:white}.aboutgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}.about h2{font-size:42px;letter-spacing:-.04em;margin:0 0 14px}.facts{display:grid;gap:12px}.fact{border-left:3px solid var(--cyan);padding:3px 0 3px 14px}.fact b{display:block}.fact span{color:var(--muted)}
+    footer{background:var(--navy);color:#c8d5e6;padding:34px 0}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.foot a{color:white}
+    @media(max-width:760px){.navlinks a:not(.resume){display:none}.hero{padding-top:62px}.grid,.aboutgrid{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}section{padding:52px 0}}
   </style>
 </head>
 <body>
   <header>
-    <div>
-      <div class="brand">V. Narayan Kushwaha - Resume</div>
-      <div class="subtitle">Aerospace & Mechanical Engineering | Vehicle Dynamics | Controls | Robotics / AV</div>
-    </div>
-    <div class="actions">
-      <a class="btn" href="/">Back to Portfolio</a>
-      <a class="btn primary" href="Kushwaha_Resume.pdf" download="V_Narayan_Kushwaha_Resume.pdf">Download PDF</a>
-    </div>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#top">VNK / ENGINEERING</a>
+      <div class="navlinks">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a class="resume" href="Kushwaha_Resume.pdf">Resume PDF</a>
+      </div>
+    </nav>
   </header>
-  <main>
-    <object class="viewer" data="Kushwaha_Resume.pdf" type="application/pdf">
-      <div class="fallback">Your browser cannot display the PDF. <a class="btn primary" href="Kushwaha_Resume.pdf" download="V_Narayan_Kushwaha_Resume.pdf">Download the resume</a>.</div>
-    </object>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Summer 2026 engineering portfolio</div>
+        <h1>Building motion, autonomy, and high-speed systems.</h1>
+        <p>Project briefs spanning lane keeping on a Tata Punch EV, cable-driven plotting, robotic manipulation, embedded actuator control, propulsion simulation, and mobile robotics.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore projects</a>
+          <a class="btn light" href="Kushwaha_Resume.pdf">Download resume</a>
+          <a class="btn" href="https://github.com/vnarayan18">GitHub profile</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="sectionhead">
+          <h2>Project briefs</h2>
+          <p>Each downloadable PDF defines the engineering problem, system architecture, technical focus, verification plan, and current evidence boundary.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="num">01 / AUTONOMY</div><h3>Autonomous Lane Keeping on Tata Punch EV</h3>
+            <p>Simulation-first lateral-control architecture linking perception, state estimation, steering control, safety supervision, and measurable validation.</p>
+            <div class="tags"><span class="tag">Controls</span><span class="tag">Vehicle dynamics</span><span class="tag">Autonomy</span></div>
+            <div class="downloads"><a href="projects/pdf/tata-punch-ev-lane-keeping.pdf">Download PDF</a><a href="projects/tex/tata-punch-ev-lane-keeping.tex">LaTeX source</a></div>
+          </article>
+          <article class="card">
+            <div class="num">02 / MECHATRONICS</div><h3>Polargraph Chalk Plotter</h3>
+            <p>A cable-driven wall plotter combining inverse kinematics, synchronized step generation, compliant chalk contact, and geometric calibration.</p>
+            <div class="tags"><span class="tag">Motion control</span><span class="tag">Fabrication</span><span class="tag">Kinematics</span></div>
+            <div class="downloads"><a href="projects/pdf/polargraph-chalk-plotter.pdf">Download PDF</a><a href="projects/tex/polargraph-chalk-plotter.tex">LaTeX source</a></div>
+          </article>
+          <article class="card">
+            <div class="num">03 / ROBOTICS</div><h3>Robotic Arm Prototype</h3>
+            <p>A compact arm design brief connecting workspace, payload, torque margin, link stiffness, joint control, homing, and repeatability testing.</p>
+            <div class="tags"><span class="tag">Robotics</span><span class="tag">CAD</span><span class="tag">Kinematics</span></div>
+            <div class="downloads"><a href="projects/pdf/robotic-arm.pdf">Download PDF</a><a href="projects/tex/robotic-arm.tex">LaTeX source</a></div>
+          </article>
+          <article class="card">
+            <div class="num">04 / EMBEDDED CONTROL</div><h3>Stepper and Servo Control Platform</h3>
+            <p>Reusable motion-control building blocks for position, velocity, acceleration, safety limits, calibration, and actuator characterization.</p>
+            <div class="tags"><span class="tag">Embedded</span><span class="tag">Instrumentation</span><span class="tag">Actuation</span></div>
+            <div class="downloads"><a href="projects/pdf/stepper-servo-control.pdf">Download PDF</a><a href="projects/tex/stepper-servo-control.tex">LaTeX source</a></div>
+          </article>
+          <article class="card">
+            <div class="num">05 / PROPULSION</div><h3>Ramjet and Scramjet Simulation Concepts</h3>
+            <p>Station-by-station compressible-flow models for inlet compression, heat addition, combustor constraints, nozzle expansion, and sensitivity studies.</p>
+            <div class="tags"><span class="tag">Aerospace</span><span class="tag">Thermodynamics</span><span class="tag">Simulation</span></div>
+            <div class="downloads"><a href="projects/pdf/ramjet-scramjet-simulation.pdf">Download PDF</a><a href="projects/tex/ramjet-scramjet-simulation.tex">LaTeX source</a></div>
+          </article>
+          <article class="card">
+            <div class="num">06 / MOBILE ROBOTICS</div><h3>EZ Roomba Mobile Robot</h3>
+            <p>A repository-documented Arduino robot integrating NewPing ultrasonic ranging, the Adafruit v1 motor shield, and deliberate pin allocation.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Mobile robotics</span></div>
+            <div class="downloads"><a href="projects/pdf/ez-roomba-mobile-robot.pdf">Download PDF</a><a href="projects/tex/ez-roomba-mobile-robot.tex">LaTeX source</a></div>
+          </article>
+        </div>
+        <p class="note"><strong>Evidence note:</strong> These are engineering project briefs, not claims of completed performance. Measured results will be added after reproducible tests. The EZ Roomba brief additionally reflects details documented in its public repository.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap aboutgrid">
+        <div><div class="eyebrow" style="color:var(--blue)">About</div><h2>V. Narayan Kushwaha</h2><p>Aerospace and mechanical engineering student working across controls, vehicle dynamics, robotics, CAD/CAM, materials, and rapid prototyping.</p></div>
+        <div class="facts">
+          <div class="fact"><b>Engineering focus</b><span>Controls, autonomy, mechatronics, and propulsion</span></div>
+          <div class="fact"><b>Methods</b><span>Simulation-first design, measurable validation, and clear evidence boundaries</span></div>
+          <div class="fact"><b>Contact</b><span><a href="mailto:vibhutik@buffalo.edu">vibhutik@buffalo.edu</a></span></div>
+        </div>
+      </div>
+    </section>
   </main>
+  <footer><div class="wrap foot"><span>© 2026 V. Narayan Kushwaha</span><span><a href="https://github.com/vnarayan18">github.com/vnarayan18</a></span></div></footer>
 </body>
 </html>

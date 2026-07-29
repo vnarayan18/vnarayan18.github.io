@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,xcolor,enumitem,hyperref}
+\definecolor{navy}{HTML}{08111F}
+\definecolor{blue}{HTML}{2677FF}
+\definecolor{muted}{HTML}{5D6B80}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\pagestyle{plain}
+\begin{document}
+{\color{blue}\small\bfseries SUMMER ENGINEERING PROJECT --- 2026}
+\vspace{0.4em}
+{\color{navy}\LARGE\bfseries Polargraph Chalk Plotter}\\
+{\color{muted}\large Cable-driven mechatronics for large-format wall drawing}
+
+\section*{Project overview}
+A cable-driven drawing machine that converts planar artwork into coordinated motor motion and deposits chalk on a vertical surface. The project combines inverse kinematics, step generation, end-effector design, calibration, and structural iteration.
+
+\section*{Engineering problem}
+Large-format plotting is mechanically simple in concept but sensitive to cable stretch, spool geometry, wall friction, missed steps, and chalk contact force.
+
+\section*{System architecture}
+\begin{itemize}
+\item Two upper motor-spool assemblies control cable lengths to position the carriage.
+\item A chalk carriage provides compliance, repeatable contact, and a controlled lift mechanism.
+\item A motion planner converts vector paths into short line segments and synchronized steps.
+\item A calibration routine maps commanded cable length to measured wall coordinates.
+\end{itemize}
+
+\section*{Engineering focus}
+\begin{itemize}
+\item Inverse kinematics from target (x, y) position to left and right cable lengths.
+\item Step-density and acceleration limits selected to reduce oscillation and missed steps.
+\item Spool-radius compensation and homing references for repeatability.
+\end{itemize}
+
+\section*{Verification plan}
+\begin{itemize}
+\item Plot a calibration grid and measure scale, skew, closure, and repeatability errors.
+\item Test circles, diagonals, corners, and long strokes at increasing speed.
+\item Log failure modes such as cable slip, chalk chatter, and carriage tilt.
+\end{itemize}
+
+\section*{Status and evidence boundary}
+Summer 2026 mechatronics prototype brief; quantitative accuracy belongs in a later test report.
+
+\vfill
+\small\color{muted} V. Narayan Kushwaha --- Summer Engineering Portfolio 2026
+\end{document}

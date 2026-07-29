@@ -1,0 +1,50 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,xcolor,enumitem,hyperref}
+\definecolor{navy}{HTML}{08111F}
+\definecolor{blue}{HTML}{2677FF}
+\definecolor{muted}{HTML}{5D6B80}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\pagestyle{plain}
+\begin{document}
+{\color{blue}\small\bfseries SUMMER ENGINEERING PROJECT --- 2026}
+\vspace{0.4em}
+{\color{navy}\LARGE\bfseries Ramjet and Scramjet Simulation Concepts}\\
+{\color{muted}\large One-dimensional propulsion-cycle models and design-space exploration}
+
+\section*{Project overview}
+A conceptual simulation study for air-breathing high-speed propulsion. The project organizes inlet compression, heat addition, combustor constraints, and nozzle expansion into traceable one-dimensional models for ramjet and scramjet regimes.
+
+\section*{Engineering problem}
+High-speed propulsion performance depends on tightly coupled compressible-flow processes, and ideal-cycle results can be misleading unless losses, thermal limits, and operating assumptions are explicit.
+
+\section*{System architecture}
+\begin{itemize}
+\item Atmosphere and flight condition define freestream stagnation properties.
+\item Inlet/diffuser model applies compression with configurable pressure recovery.
+\item Combustor model applies heat addition, fuel limits, and ramjet/scramjet Mach assumptions.
+\item Nozzle model estimates expansion, exit state, thrust, and specific impulse trends.
+\end{itemize}
+
+\section*{Engineering focus}
+\begin{itemize}
+\item Track static and stagnation properties station by station with unit checks.
+\item Compare ideal and loss-inclusive cases across Mach number and equivalence ratio.
+\item Treat dissociation, finite-rate chemistry, and multidimensional shocks as future fidelity.
+\end{itemize}
+
+\section*{Verification plan}
+\begin{itemize}
+\item Recover limiting textbook cases before exploring the design space.
+\item Check conservation of mass, energy, and physically admissible temperatures and pressures.
+\item Use sensitivity plots to distinguish robust trends from assumption-driven conclusions.
+\end{itemize}
+
+\section*{Status and evidence boundary}
+Summer 2026 simulation concept; this brief presents model structure, not validated engine performance.
+
+\vfill
+\small\color{muted} V. Narayan Kushwaha --- Summer Engineering Portfolio 2026
+\end{document}
