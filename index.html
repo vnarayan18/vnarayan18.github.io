@@ -3,113 +3,407 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>V. Narayan Kushwaha | Summer Engineering Portfolio</title>
-  <meta name="description" content="Summer 2026 engineering portfolio: autonomy, controls, robotics, mechatronics, and aerospace simulation.">
-  <meta name="theme-color" content="#08111f">
+  <title>V. Narayan Kushwaha — Engineering Portfolio</title>
+  <meta name="description" content="Engineering portfolio of V. Narayan Kushwaha — aerospace, controls, robotics, mechatronics, and simulation.">
+  <meta name="theme-color" content="#ffffff">
   <style>
-    :root{--navy:#08111f;--ink:#14233a;--muted:#607087;--blue:#2677ff;--cyan:#32c6d0;--paper:#f5f8fc;--card:#fff;--line:#dbe4ef}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-    a{color:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(245,248,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;letter-spacing:-.02em}.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{text-decoration:none;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--blue)}
-    .hero{padding:88px 0 64px;background:radial-gradient(circle at 80% 20%,rgba(50,198,208,.2),transparent 32%),linear-gradient(135deg,#08111f,#10264c);color:white}
-    .eyebrow{font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#7ee8ee}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-.055em;margin:12px 0 20px;max-width:850px}
-    .hero p{max-width:720px;color:#cad7e8;font-size:clamp(17px,2vw,21px)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,.28);font-weight:750;font-size:14px}.btn.primary{background:var(--blue);border-color:var(--blue);color:white}.btn.light{background:white;color:var(--navy)}
-    section{padding:70px 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:26px}.sectionhead h2{font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.04em;margin:0}.sectionhead p{max-width:540px;color:var(--muted);margin:0}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 12px 34px rgba(8,17,31,.06);display:flex;flex-direction:column}
-    .num{font:800 12px/1 ui-monospace,monospace;color:var(--blue);letter-spacing:.1em}.card h3{font-size:23px;line-height:1.15;letter-spacing:-.025em;margin:15px 0 9px}.card p{color:var(--muted);margin:0 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}.tag{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:#edf4ff;color:#1b5fc4;border-radius:999px;padding:5px 8px}
-    .downloads{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto}.downloads a{font-size:13px;font-weight:750;text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:8px 10px}.downloads a:first-child{background:var(--navy);color:white;border-color:var(--navy)}
-    .note{background:#eaf8f8;border:1px solid #b8e2e5;border-radius:16px;padding:20px;color:#31545b}.about{background:white}.aboutgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}.about h2{font-size:42px;letter-spacing:-.04em;margin:0 0 14px}.facts{display:grid;gap:12px}.fact{border-left:3px solid var(--cyan);padding:3px 0 3px 14px}.fact b{display:block}.fact span{color:var(--muted)}
-    footer{background:var(--navy);color:#c8d5e6;padding:34px 0}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.foot a{color:white}
-    @media(max-width:760px){.navlinks a:not(.resume){display:none}.hero{padding-top:62px}.grid,.aboutgrid{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}section{padding:52px 0}}
+    :root {
+      --ink: #111111;
+      --paper: #ffffff;
+      --soft: #f4f4f0;
+      --mid: #777773;
+      --line: #d9d9d4;
+      --mono: "Courier New", Courier, monospace;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--mono); }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { background: var(--ink); color: var(--paper); }
+    .skip-link { position: fixed; top: -60px; left: 12px; z-index: 100; padding: 10px 14px; background: var(--ink); color: var(--paper); }
+    .skip-link:focus { top: 12px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 58px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: .02em;
+    }
+    .nav-group { display: flex; align-items: center; gap: 24px; }
+    .nav-group:last-child { justify-content: flex-end; }
+    .nav a { text-decoration: none; }
+    .nav a:hover, .nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+    .wordmark { font-family: Georgia, "Times New Roman", serif; font-size: 16px; letter-spacing: .22em; white-space: nowrap; text-align: center; }
+    .external::after { content: " ↗"; }
+
+    .hero {
+      min-height: calc(100vh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, 62%) minmax(350px, 38%);
+      border-bottom: 1px solid var(--line);
+    }
+    .gallery {
+      position: relative;
+      min-height: 720px;
+      border-right: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      background: var(--paper);
+    }
+    .thumbs {
+      padding: 132px 14px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      align-items: center;
+    }
+    .thumb {
+      width: 54px;
+      height: 68px;
+      border: 1px solid transparent;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      color: var(--mid);
+      font-size: 10px;
+      transition: .2s ease;
+    }
+    .thumb span { writing-mode: vertical-rl; transform: rotate(180deg); }
+    .thumb:hover, .thumb:focus-visible { border-color: var(--ink); color: var(--ink); }
+    .thumb.active { position: relative; border-color: var(--ink); color: var(--ink); }
+    .thumb.active::before, .thumb.active::after { content: ""; position: absolute; width: 12px; height: 12px; }
+    .thumb.active::before { left: -5px; top: -5px; border-left: 1px solid var(--ink); border-top: 1px solid var(--ink); }
+    .thumb.active::after { right: -5px; bottom: -5px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+
+    .artifact {
+      min-width: 0;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background-image:
+        linear-gradient(to right, transparent calc(50% - .5px), rgba(17,17,17,.09) 50%, transparent calc(50% + .5px)),
+        linear-gradient(to bottom, transparent calc(50% - .5px), rgba(17,17,17,.09) 50%, transparent calc(50% + .5px));
+    }
+    .artifact::before {
+      content: "VNK";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%,-50%);
+      font: 900 clamp(150px, 24vw, 390px)/.78 var(--sans);
+      letter-spacing: -.11em;
+      color: #eeeeea;
+      z-index: 0;
+    }
+    .artifact svg { position: relative; z-index: 1; width: min(86%, 720px); height: auto; filter: drop-shadow(0 18px 25px rgba(0,0,0,.08)); }
+    .artifact-label { position: absolute; z-index: 2; font-size: 10px; color: var(--mid); text-transform: uppercase; }
+    .artifact-label.top { top: 22px; right: 24px; }
+    .artifact-label.bottom { bottom: 22px; left: 22px; }
+
+    .details {
+      min-width: 0;
+      padding: 34px clamp(24px, 4vw, 58px) 38px;
+      display: flex;
+      flex-direction: column;
+    }
+    .breadcrumb { color: var(--mid); font-size: 11px; text-transform: uppercase; margin: 0 0 10px; }
+    .title-line { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    h1 { margin: 0; font-size: clamp(23px, 2.25vw, 36px); line-height: 1.05; letter-spacing: -.05em; text-transform: uppercase; font-weight: 500; }
+    .edition { flex: none; font-size: 11px; color: var(--mid); }
+    .role { margin: 22px 0 0; font: 700 11px/1.25 var(--mono); text-transform: uppercase; }
+    .intro { margin: 15px 0 0; max-width: 50ch; font-size: 12px; line-height: 1.45; text-transform: uppercase; }
+    .availability { margin: 42px 0 0; padding-top: 17px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 115px 1fr; gap: 18px; font-size: 11px; line-height: 1.45; text-transform: uppercase; }
+    .availability strong { font-weight: 700; }
+    .availability span { color: var(--mid); }
+    .disciplines { margin-top: auto; padding-top: 44px; }
+    .discipline-head { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 10px; font-size: 11px; text-transform: uppercase; }
+    .discipline-head span:last-child { color: var(--mid); }
+    .discipline-list { display: flex; flex-wrap: wrap; gap: 3px; }
+    .discipline-list a { min-width: 40px; padding: 8px 9px; border: 1px solid transparent; text-decoration: none; text-align: center; font-size: 11px; }
+    .discipline-list a:hover, .discipline-list a:focus-visible { border-color: var(--ink); }
+    .primary-cta { margin-top: 42px; display: grid; place-items: center; min-height: 42px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); text-decoration: none; font-size: 11px; text-transform: uppercase; transition: .2s ease; }
+    .primary-cta:hover, .primary-cta:focus-visible { background: var(--paper); color: var(--ink); }
+    .quick-links { margin-top: 8px; display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--line); }
+    .quick-links a { min-width: 0; padding: 11px 7px; text-align: center; text-decoration: none; text-transform: uppercase; font-size: 10px; }
+    .quick-links a + a { border-left: 1px solid var(--line); }
+    .quick-links a:hover, .quick-links a:focus-visible { background: var(--soft); }
+
+    .work { padding: 82px 20px 110px; }
+    .work-head { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: end; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
+    .section-kicker { font-size: 11px; color: var(--mid); text-transform: uppercase; }
+    h2 { margin: 0; font: 400 clamp(38px, 6vw, 90px)/.86 var(--sans); letter-spacing: -.07em; text-transform: uppercase; }
+    .work-count { text-align: right; font-size: 11px; text-transform: uppercase; }
+    .project-list { border-bottom: 1px solid var(--ink); }
+    .project {
+      display: grid;
+      grid-template-columns: 76px minmax(250px, 1.1fr) minmax(260px, .85fr) auto;
+      gap: 28px;
+      align-items: center;
+      min-height: 150px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+    .project:first-child { border-top: 0; }
+    .project-no { align-self: start; padding-top: 4px; color: var(--mid); font-size: 11px; }
+    .project h3 { margin: 0; font: 500 clamp(22px, 2.6vw, 41px)/.96 var(--sans); letter-spacing: -.055em; }
+    .project-meta { align-self: start; }
+    .project-type { margin: 4px 0 13px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+    .project p { margin: 0; max-width: 54ch; color: #4e4e4a; font-size: 11px; line-height: 1.5; text-transform: uppercase; }
+    .project-actions { display: flex; flex-direction: column; min-width: 128px; border: 1px solid var(--line); }
+    .project-actions a { padding: 10px 12px; text-decoration: none; text-align: center; font-size: 10px; text-transform: uppercase; }
+    .project-actions a + a { border-top: 1px solid var(--line); }
+    .project-actions a:first-child { background: var(--ink); color: var(--paper); }
+    .project-actions a:hover, .project-actions a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+
+    .about { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .about-title { padding: 70px 20px; border-right: 1px solid var(--ink); }
+    .about-title h2 { max-width: 8ch; }
+    .about-copy { padding: 70px clamp(24px, 5vw, 80px); display: grid; gap: 40px; }
+    .about-copy > p { margin: 0; max-width: 55ch; font: 400 clamp(18px, 2vw, 27px)/1.2 var(--sans); letter-spacing: -.02em; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+    .fact { padding: 16px 12px 16px 0; font-size: 11px; line-height: 1.5; text-transform: uppercase; }
+    .fact:nth-child(even) { padding-left: 12px; border-left: 1px solid var(--line); }
+    .fact b { display: block; margin-bottom: 5px; }
+    .fact span { color: var(--mid); }
+
+    footer { padding: 28px 20px 34px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: end; font-size: 10px; text-transform: uppercase; }
+    footer .footer-name { font: 400 17px/1 Georgia, serif; letter-spacing: .15em; text-align: center; }
+    footer .footer-links { display: flex; justify-content: flex-end; gap: 18px; }
+
+    @media (max-width: 980px) {
+      .nav { grid-template-columns: 1fr auto; padding: 12px 16px; }
+      .wordmark { grid-column: 1; grid-row: 1; text-align: left; }
+      .nav-group:first-child { display: none; }
+      .nav-group:last-child { grid-column: 2; grid-row: 1; gap: 14px; }
+      .hero { grid-template-columns: 1fr; }
+      .gallery { min-height: 70vh; border-right: 0; border-bottom: 1px solid var(--line); }
+      .details { min-height: 600px; }
+      .project { grid-template-columns: 52px 1fr auto; }
+      .project-meta { grid-column: 2; }
+      .project-actions { grid-column: 3; grid-row: 1 / span 2; }
+      .work-head { grid-template-columns: 1fr auto; }
+      .work-head h2 { grid-column: 1 / -1; margin-top: 30px; }
+    }
+
+    @media (max-width: 660px) {
+      .nav { display: flex; min-height: auto; flex-wrap: wrap; gap: 12px; }
+      .wordmark { width: 100%; padding-bottom: 10px; border-bottom: 1px solid var(--line); text-align: center; }
+      .nav-group:last-child { width: 100%; display: grid; grid-template-columns: repeat(3,1fr); gap: 0; text-align: center; }
+      .nav-group:last-child a + a { border-left: 1px solid var(--line); }
+      .hero { min-height: 0; }
+      .gallery { min-height: 520px; grid-template-columns: 58px 1fr; }
+      .thumbs { padding: 80px 7px 20px; }
+      .thumb { width: 40px; height: 56px; }
+      .artifact::before { font-size: 36vw; }
+      .artifact svg { width: 94%; }
+      .details { min-height: 620px; padding: 26px 18px 28px; }
+      .availability { grid-template-columns: 90px 1fr; }
+      .work { padding: 64px 14px 80px; }
+      .project { grid-template-columns: 35px 1fr; gap: 15px; padding: 25px 0; }
+      .project-meta, .project-actions { grid-column: 2; }
+      .project-actions { grid-row: auto; flex-direction: row; }
+      .project-actions a { flex: 1; }
+      .project-actions a + a { border-top: 0; border-left: 1px solid var(--line); }
+      .about { grid-template-columns: 1fr; }
+      .about-title { border-right: 0; border-bottom: 1px solid var(--ink); padding: 58px 16px; }
+      .about-copy { padding: 50px 16px; }
+      .facts { grid-template-columns: 1fr; }
+      .fact:nth-child(even) { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      footer { grid-template-columns: 1fr; text-align: center; }
+      footer .footer-name { grid-row: 1; }
+      footer .footer-links { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="Primary navigation">
-      <a class="brand" href="#top">VNK / ENGINEERING</a>
-      <div class="navlinks">
-        <a href="#projects">Projects</a>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-group">
+        <a href="#work">Work</a>
         <a href="#about">About</a>
-        <a class="resume" href="Kushwaha_Resume.pdf">Resume PDF</a>
+        <a class="external" href="https://github.com/vnarayan18" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <a class="wordmark" href="#top" aria-label="V. Narayan Kushwaha, home">V. NARAYAN KUSHWAHA</a>
+      <div class="nav-group">
+        <a href="Kushwaha_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="external" href="https://www.linkedin.com/in/narayan18/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="external" href="https://www.youtube.com/@vnarayan18" target="_blank" rel="noopener">YouTube</a>
       </div>
     </nav>
   </header>
 
-  <main id="top">
-    <div class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Summer 2026 engineering portfolio</div>
-        <h1>Building motion, autonomy, and high-speed systems.</h1>
-        <p>Project briefs spanning lane keeping on a Tata Punch EV, cable-driven plotting, robotic manipulation, embedded actuator control, propulsion simulation, and mobile robotics.</p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">Explore projects</a>
-          <a class="btn light" href="Kushwaha_Resume.pdf">Download resume</a>
-          <a class="btn" href="https://github.com/vnarayan18">GitHub profile</a>
+  <main id="content">
+    <section class="hero" id="top" aria-labelledby="portfolio-title">
+      <div class="gallery" aria-label="Engineering disciplines">
+        <div class="thumbs" aria-label="Jump to selected projects">
+          <a class="thumb active" href="#project-01"><span>Autonomy</span></a>
+          <a class="thumb" href="#project-02"><span>Plotter</span></a>
+          <a class="thumb" href="#project-03"><span>Robotics</span></a>
+          <a class="thumb" href="#project-05"><span>Propulsion</span></a>
+          <a class="thumb" href="#project-06"><span>Mobile</span></a>
+        </div>
+
+        <div class="artifact">
+          <span class="artifact-label top">Fig. 01 / Motion systems</span>
+          <span class="artifact-label bottom">Controls · Mechanics · Simulation</span>
+          <svg viewBox="0 0 760 760" role="img" aria-label="Abstract technical drawing representing a mechanical control system">
+            <defs>
+              <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                <path d="M32 0H0V32" fill="none" stroke="#111" stroke-opacity=".08" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <circle cx="380" cy="380" r="306" fill="url(#grid)" stroke="#111" stroke-width="1"/>
+            <circle cx="380" cy="380" r="220" fill="#fff" stroke="#111" stroke-width="2"/>
+            <circle cx="380" cy="380" r="106" fill="#111"/>
+            <circle cx="380" cy="380" r="50" fill="#fff"/>
+            <g fill="none" stroke="#111" stroke-width="16" stroke-linecap="round">
+              <path d="M380 274V146"/>
+              <path d="M472 327L583 263"/>
+              <path d="M472 433L583 497"/>
+              <path d="M380 486V614"/>
+              <path d="M288 433L177 497"/>
+              <path d="M288 327L177 263"/>
+            </g>
+            <g fill="#fff" stroke="#111" stroke-width="3">
+              <circle cx="380" cy="132" r="28"/><circle cx="596" cy="255" r="28"/><circle cx="596" cy="505" r="28"/>
+              <circle cx="380" cy="628" r="28"/><circle cx="164" cy="505" r="28"/><circle cx="164" cy="255" r="28"/>
+            </g>
+            <g fill="#111" font-family="Courier New" font-size="15" text-anchor="middle">
+              <text x="380" y="137">CTRL</text><text x="596" y="260">CAD</text><text x="596" y="510">SIM</text>
+              <text x="380" y="633">TEST</text><text x="164" y="510">FAB</text><text x="164" y="260">SENS</text>
+            </g>
+            <g fill="none" stroke="#111" stroke-width="1">
+              <path d="M380 44V96M380 664V716M44 380H96M664 380H716"/>
+              <path d="M128 128L166 166M594 594L632 632M632 128L594 166M166 594L128 632"/>
+            </g>
+          </svg>
         </div>
       </div>
-    </div>
 
-    <section id="projects">
-      <div class="wrap">
-        <div class="sectionhead">
-          <h2>Project briefs</h2>
-          <p>Each downloadable PDF defines the engineering problem, system architecture, technical focus, verification plan, and current evidence boundary.</p>
+      <div class="details">
+        <p class="breadcrumb">Portfolio / Engineering / 2026</p>
+        <div class="title-line">
+          <h1 id="portfolio-title">V. Narayan<br>Kushwaha</h1>
+          <span class="edition">VNK–01</span>
         </div>
-        <div class="grid">
-          <article class="card">
-            <div class="num">01 / AUTONOMY</div><h3>Autonomous Lane Keeping on Tata Punch EV</h3>
-            <p>Simulation-first lateral-control architecture linking perception, state estimation, steering control, safety supervision, and measurable validation.</p>
-            <div class="tags"><span class="tag">Controls</span><span class="tag">Vehicle dynamics</span><span class="tag">Autonomy</span></div>
-            <div class="downloads"><a href="projects/pdf/tata-punch-ev-lane-keeping.pdf">Download PDF</a><a href="projects/tex/tata-punch-ev-lane-keeping.tex">LaTeX source</a></div>
-          </article>
-          <article class="card">
-            <div class="num">02 / MECHATRONICS</div><h3>Polargraph Chalk Plotter</h3>
-            <p>A cable-driven wall plotter combining inverse kinematics, synchronized step generation, compliant chalk contact, and geometric calibration.</p>
-            <div class="tags"><span class="tag">Motion control</span><span class="tag">Fabrication</span><span class="tag">Kinematics</span></div>
-            <div class="downloads"><a href="projects/pdf/polargraph-chalk-plotter.pdf">Download PDF</a><a href="projects/tex/polargraph-chalk-plotter.tex">LaTeX source</a></div>
-          </article>
-          <article class="card">
-            <div class="num">03 / ROBOTICS</div><h3>Robotic Arm Prototype</h3>
-            <p>A compact arm design brief connecting workspace, payload, torque margin, link stiffness, joint control, homing, and repeatability testing.</p>
-            <div class="tags"><span class="tag">Robotics</span><span class="tag">CAD</span><span class="tag">Kinematics</span></div>
-            <div class="downloads"><a href="projects/pdf/robotic-arm.pdf">Download PDF</a><a href="projects/tex/robotic-arm.tex">LaTeX source</a></div>
-          </article>
-          <article class="card">
-            <div class="num">04 / EMBEDDED CONTROL</div><h3>Stepper and Servo Control Platform</h3>
-            <p>Reusable motion-control building blocks for position, velocity, acceleration, safety limits, calibration, and actuator characterization.</p>
-            <div class="tags"><span class="tag">Embedded</span><span class="tag">Instrumentation</span><span class="tag">Actuation</span></div>
-            <div class="downloads"><a href="projects/pdf/stepper-servo-control.pdf">Download PDF</a><a href="projects/tex/stepper-servo-control.tex">LaTeX source</a></div>
-          </article>
-          <article class="card">
-            <div class="num">05 / PROPULSION</div><h3>Ramjet and Scramjet Simulation Concepts</h3>
-            <p>Station-by-station compressible-flow models for inlet compression, heat addition, combustor constraints, nozzle expansion, and sensitivity studies.</p>
-            <div class="tags"><span class="tag">Aerospace</span><span class="tag">Thermodynamics</span><span class="tag">Simulation</span></div>
-            <div class="downloads"><a href="projects/pdf/ramjet-scramjet-simulation.pdf">Download PDF</a><a href="projects/tex/ramjet-scramjet-simulation.tex">LaTeX source</a></div>
-          </article>
-          <article class="card">
-            <div class="num">06 / MOBILE ROBOTICS</div><h3>EZ Roomba Mobile Robot</h3>
-            <p>A repository-documented Arduino robot integrating NewPing ultrasonic ranging, the Adafruit v1 motor shield, and deliberate pin allocation.</p>
-            <div class="tags"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Mobile robotics</span></div>
-            <div class="downloads"><a href="projects/pdf/ez-roomba-mobile-robot.pdf">Download PDF</a><a href="projects/tex/ez-roomba-mobile-robot.tex">LaTeX source</a></div>
-          </article>
+        <p class="role">Aerospace + Mechanical Engineering</p>
+        <p class="intro">Building motion, autonomy, and high-speed systems through simulation-first design, physical prototyping, and measurable validation.</p>
+
+        <div class="availability">
+          <strong>Information</strong>
+          <span>Work spanning controls, vehicle dynamics, robotics, CAD/CAM, embedded actuation, materials, and propulsion.</span>
         </div>
-        <p class="note"><strong>Evidence note:</strong> These are engineering project briefs, not claims of completed performance. Measured results will be added after reproducible tests. The EZ Roomba brief additionally reflects details documented in its public repository.</p>
+
+        <div class="disciplines">
+          <div class="discipline-head"><strong>Discipline</strong><span>Select</span></div>
+          <div class="discipline-list">
+            <a href="#project-01">AUT</a><a href="#project-02">MEC</a><a href="#project-03">ROB</a><a href="#project-04">EMB</a><a href="#project-05">AERO</a><a href="#project-06">MOB</a>
+          </div>
+          <a class="primary-cta" href="#work">View selected work →</a>
+          <div class="quick-links" aria-label="Professional links">
+            <a href="Kushwaha_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="https://www.linkedin.com/in/narayan18/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.youtube.com/@vnarayan18" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="wrap aboutgrid">
-        <div><div class="eyebrow" style="color:var(--blue)">About</div><h2>V. Narayan Kushwaha</h2><p>Aerospace and mechanical engineering student working across controls, vehicle dynamics, robotics, CAD/CAM, materials, and rapid prototyping.</p></div>
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="work-head">
+        <span class="section-kicker">Project archive</span>
+        <h2 id="work-title">Selected work</h2>
+        <span class="work-count">06 briefs / 2026</span>
+      </div>
+
+      <div class="project-list">
+        <article class="project" id="project-01">
+          <span class="project-no">01 / 06</span>
+          <h3>Autonomous Lane Keeping on Tata Punch EV</h3>
+          <div class="project-meta"><p class="project-type">Autonomy · Controls · Vehicle dynamics</p><p>Simulation-first lateral control linking perception, state estimation, steering, safety supervision, and measurable validation.</p></div>
+          <div class="project-actions"><a href="projects/pdf/tata-punch-ev-lane-keeping.pdf" target="_blank" rel="noopener">Open brief</a><a href="projects/tex/tata-punch-ev-lane-keeping.tex">Source</a></div>
+        </article>
+
+        <article class="project" id="project-02">
+          <span class="project-no">02 / 06</span>
+          <h3>Polargraph Chalk Plotter</h3>
+          <div class="project-meta"><p class="project-type">Mechatronics · Motion control · Fabrication</p><p>A cable-driven wall plotter combining inverse kinematics, synchronized step generation, compliant contact, and geometric calibration.</p></div>
+          <div class="project-actions"><a href="projects/pdf/polargraph-chalk-plotter.pdf" target="_blank" rel="noopener">Open brief</a><a href="projects/tex/polargraph-chalk-plotter.tex">Source</a></div>
+        </article>
+
+        <article class="project" id="project-03">
+          <span class="project-no">03 / 06</span>
+          <h3>Robotic Arm Prototype</h3>
+          <div class="project-meta"><p class="project-type">Robotics · CAD · Kinematics</p><p>A compact arm design connecting workspace, payload, torque margin, link stiffness, joint control, homing, and repeatability testing.</p></div>
+          <div class="project-actions"><a href="projects/pdf/robotic-arm.pdf" target="_blank" rel="noopener">Open brief</a><a href="projects/tex/robotic-arm.tex">Source</a></div>
+        </article>
+
+        <article class="project" id="project-04">
+          <span class="project-no">04 / 06</span>
+          <h3>Stepper + Servo Control Platform</h3>
+          <div class="project-meta"><p class="project-type">Embedded · Instrumentation · Actuation</p><p>Reusable motion-control building blocks for position, velocity, acceleration, safety limits, calibration, and actuator characterization.</p></div>
+          <div class="project-actions"><a href="projects/pdf/stepper-servo-control.pdf" target="_blank" rel="noopener">Open brief</a><a href="projects/tex/stepper-servo-control.tex">Source</a></div>
+        </article>
+
+        <article class="project" id="project-05">
+          <span class="project-no">05 / 06</span>
+          <h3>Ramjet + Scramjet Simulation Concepts</h3>
+          <div class="project-meta"><p class="project-type">Aerospace · Thermodynamics · Simulation</p><p>Station-by-station compressible-flow models for inlet compression, heat addition, combustor constraints, nozzle expansion, and sensitivity studies.</p></div>
+          <div class="project-actions"><a href="projects/pdf/ramjet-scramjet-simulation.pdf" target="_blank" rel="noopener">Open brief</a><a href="projects/tex/ramjet-scramjet-simulation.tex">Source</a></div>
+        </article>
+
+        <article class="project" id="project-06">
+          <span class="project-no">06 / 06</span>
+          <h3>EZ Roomba Mobile Robot</h3>
+          <div class="project-meta"><p class="project-type">Arduino · Sensors · Mobile robotics</p><p>An Arduino robot integrating ultrasonic ranging, motor-shield control, obstacle response, and deliberate pin allocation.</p></div>
+          <div class="project-actions"><a href="projects/pdf/ez-roomba-mobile-robot.pdf" target="_blank" rel="noopener">Open brief</a><a href="projects/tex/ez-roomba-mobile-robot.tex">Source</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-title">
+        <span class="section-kicker">About / Profile</span>
+        <h2 id="about-title">Design.<br>Build.<br>Verify.</h2>
+      </div>
+      <div class="about-copy">
+        <p>V. Narayan Kushwaha is an aerospace and mechanical engineering student working across controls, autonomy, mechatronics, propulsion, and rapid prototyping.</p>
         <div class="facts">
-          <div class="fact"><b>Engineering focus</b><span>Controls, autonomy, mechatronics, and propulsion</span></div>
-          <div class="fact"><b>Methods</b><span>Simulation-first design, measurable validation, and clear evidence boundaries</span></div>
+          <div class="fact"><b>Focus</b><span>Controls, autonomy, robotics, and propulsion</span></div>
+          <div class="fact"><b>Method</b><span>Simulation-first design with clear evidence boundaries</span></div>
           <div class="fact"><b>Contact</b><span><a href="mailto:vibhutik@buffalo.edu">vibhutik@buffalo.edu</a></span></div>
+          <div class="fact"><b>Professional</b><span><a href="https://www.linkedin.com/in/narayan18/" target="_blank" rel="noopener">LinkedIn profile ↗</a></span></div>
         </div>
       </div>
     </section>
   </main>
-  <footer><div class="wrap foot"><span>© 2026 V. Narayan Kushwaha</span><span><a href="https://github.com/vnarayan18">github.com/vnarayan18</a></span></div></footer>
+
+  <footer>
+    <span>© <span id="year">2026</span> / Engineering portfolio</span>
+    <a class="footer-name" href="#top">VNK</a>
+    <span class="footer-links"><a href="Kushwaha_Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="https://www.youtube.com/@vnarayan18" target="_blank" rel="noopener">YouTube</a></span>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
